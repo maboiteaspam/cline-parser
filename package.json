@@ -1,0 +1,17 @@
+{
+  "name": "cline-parser",
+  "version": "1.0.0",
+  "description": "simple command line parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maboiteaspam",
+  "license": "WTF",
+  "devDependencies": {
+    "should": "^6.0.1"
+  },
+  "dependencies": {
+    "underscore.string": "^3.0.3"
+  }
+}
