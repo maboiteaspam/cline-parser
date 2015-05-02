@@ -9,6 +9,10 @@ Mac/Linux | Windows
 
 A library to parse command line.
 
+# Install
+
+```npm i cline-parser -g```
+
 # Usage
 
 ```js
