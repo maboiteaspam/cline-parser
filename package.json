@@ -1,6 +1,6 @@
 {
   "name": "cline-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple command line parser",
   "main": "index.js",
   "scripts": {
