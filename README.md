@@ -11,7 +11,7 @@ A library to parse command line.
 
 # Install
 
-```npm i cline-parser -g```
+```npm i cline-parser```
 
 # Usage
 
