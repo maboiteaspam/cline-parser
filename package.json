@@ -1,6 +1,6 @@
 {
   "name": "cline-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple command line parser",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,9 @@
   "license": "WTF",
   "devDependencies": {
     "should": "^6.0.1"
+  },
+  "repository": {
+    "url": "https://github.com/maboiteaspam/cline-parser"
   },
   "dependencies": {
     "debug": "^2.1.3",
