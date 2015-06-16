@@ -11,16 +11,34 @@ describe('cline-parse', function(){
     parser('ls -alh').prg.should.eql('ls');
     parser('ls -alh').args.should.eql(['-alh']);
   });
-  it('should parse with quotes', function(){
+  it('should parse string enclosed with double quotes', function(){
     parser('ls "some path / with /spaces"')
       .prg.should.eql('ls');
     parser('ls "some path / with /spaces"')
       .args.should.eql(['some path / with /spaces']);
   });
-  it('should parse with escape', function(){
+  it('should understand double quotes escape', function(){
     parser('ls "some path / \"with /spaces"')
       .prg.should.eql('ls');
-    parser('ls "some path / \\"with /spaces"')
-      .args.should.eql(['some path / \\"with /spaces']);
+    parser('ls "some path / \\"with /quotes"')
+      .args.should.eql(['some path / \\"with /quotes']);
+  });
+  it('should parse string enclosed with single quote', function(){
+    parser("ls 'some path / with /quotes'")
+      .prg.should.eql('ls');
+    parser("ls 'some path / with /quotes'")
+      .args.should.eql(['some path / with /quotes']);
+  });
+  it('should understand single quote escape', function(){
+    parser("ls 'some path / with /quotes'")
+      .prg.should.eql('ls');
+    parser("ls 'some path / \\'with /quotes'")
+      .args.should.eql(["some path / \\'with /quotes"]);
+  });
+  it('demonstration', function(){
+    parser("ls -alh some whatever -args")
+      .prg.should.eql('ls');
+    parser("ls -alh some whatever -args")
+      .args.should.eql(['-alh', 'some', 'whatever', '-args']);
   });
 });

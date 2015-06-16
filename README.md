@@ -7,11 +7,11 @@ Mac/Linux | Windows
   [![Windows Build status](http://img.shields.io/appveyor/ci/maboiteaspam/cline-parser.svg)](https://ci.appveyor.com/project/maboiteaspam/cline-parser/branch/master)
 
 
-A library to parse command line.
+A library to parse a string command line into an array usable by child_process.spawn
 
 # Install
 
-```npm i cline-parser```
+```npm i cline-parser --save```
 
 # Usage
 
@@ -19,14 +19,17 @@ A library to parse command line.
 
     var parser = require('cline-parser');
     
-    var cmd = parser('ls "some path / \\"with /spaces"');
+    var cmdStr = 'ls "some path / \\"with /spaces" -args';
+    var cmd = parser(cmdStr);
     
+    // this is what you could actually do.
     require('child_process').spawn(cmd.prg,{},cmd.args);
     
+    // quick insights.
     cmd.prg == 'ls';
-    
     cmd.args == [
-        'some path / \\"with /spaces'
+        'some path / \\"with /spaces',
+        '-args'
     ];
     
 ```
