@@ -23,7 +23,7 @@ A library to parse a string command line into an array usable by child_process.s
     var cmd = parser(cmdStr);
     
     // this is what you could actually do.
-    require('child_process').spawn(cmd.prg,{},cmd.args);
+    require('child_process').spawn(cmd.prg,cmd.args);
     
     // quick insights.
     cmd.prg == 'ls';
